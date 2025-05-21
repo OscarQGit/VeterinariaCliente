@@ -91,7 +91,7 @@ const AddPet = () => {
             type="text"
             className="form-control rounded-0"
             id="inputName"
-            placeholder="Enter Name"
+            placeholder="Nombre"
             onChange={(e) =>
               setPet({ ...pet, pet_name: e.target.value })
             }
@@ -105,7 +105,7 @@ const AddPet = () => {
             type="text"
             className="form-control rounded-0"
             id="inputChipNumber4"
-            placeholder="Enter Chip Number"
+            placeholder="Numero de Chip"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_chip_number: e.target.value })
@@ -120,7 +120,7 @@ const AddPet = () => {
             type="text"
             className="form-control rounded-0"
             id="inputType4"
-            placeholder="Enter the Type of Pet"
+            placeholder="Tipo de Mascota (perro, gato,etc)"
             onChange={(e) =>
               setPet({ ...pet, pet_type: e.target.value })
             }
@@ -134,7 +134,7 @@ const AddPet = () => {
             type="text"
             className="form-control rounded-0"
             id="inputBreed"
-            placeholder="Enter the breed"
+            placeholder="Raza (si aplica)"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_breed: e.target.value })
@@ -149,7 +149,7 @@ const AddPet = () => {
             type="char"
             className="form-control rounded-0"
             id="inputGender"
-            placeholder="Enter the gender"
+            placeholder="Sexo (M o H)"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_gender: e.target.value })
@@ -164,7 +164,7 @@ const AddPet = () => {
             type="date"
             className="form-control rounded-0"
             id="inputBirthDate"
-            placeholder="Enter the date of birth"
+            placeholder="Fecha de nacimiento"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_birthdate: e.target.value })
@@ -179,7 +179,7 @@ const AddPet = () => {
             type="text"
             className="form-control rounded-0"
             id="inputHeight"
-            placeholder="Enter the height in cm"
+            placeholder="En cm"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_height: e.target.value })
@@ -194,7 +194,7 @@ const AddPet = () => {
             type="text"
             className="form-control rounded-0"
             id="inputWeight"
-            placeholder="Enter the weight in kg"
+            placeholder="Peso en kg"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_weight: e.target.value })
@@ -257,7 +257,7 @@ const AddPet = () => {
             type="date"
             className="form-control rounded-0"
             id="inputDateVaccination"
-            placeholder="Enter the date of birth"
+            placeholder="Fecha de nacimiento"
             autoComplete="off"
             onChange={(e) =>
               setPet({ ...pet, pet_vaccination_date: e.target.value })
