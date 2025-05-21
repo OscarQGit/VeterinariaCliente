@@ -23,7 +23,8 @@ const AddPetOwners = () => {
       .get("https://veterinariacliente.onrender.com/auth/role-types")
       .then((result) => {
         if (result.data.Status) {
-          setRole(result.data.Result);
+          console.log(result.data)
+          setRole(result.data.Result.rows);
         } else {
           alert(result.data.Error);
         }
@@ -36,7 +37,7 @@ const AddPetOwners = () => {
       .get("https://veterinariacliente.onrender.com/auth/categories")
       .then((result) => {
         if (result.data.Status) {
-          setCategory(result.data.Result);
+          setCategory(result.data.Result.rows);
         } else {
           alert(result.data.Error);
         }
@@ -64,56 +65,56 @@ const AddPetOwners = () => {
     <div className="d-flex justify-content-center align-items-center mt-5 mb-5">
       <div className="p-3 rounded w-50 border">
         <div className="text-warning"></div>
-        <h2>Add Pet Owner</h2>
+        <h2>Agregar Propietario</h2>
         <form className="row g-1" onSubmit={handleSubmit}>
         <div className="col-12">
             <label htmlFor="inputName4" className="form-label">
-              Name
+              Nombre
             </label>
             <input
               type="text"
               className="form-control rounded-0"
               id="inputName4"
-              placeholder="Enter Name"
+              placeholder="Nombre"
               autoComplete="off"
               onChange={(e) => setOwner({ ...owner, owner_name: e.target.value })}
             />
           </div>
           <div className="col-12">
             <label htmlFor="inputEMSO4" className="form-label">
-              EMSO
+              CURP
             </label>
             <input
               type="text"
               className="form-control rounded-0"
               id="inputEMSO4"
-              placeholder="Enter EMSO"
+              placeholder="CURP"
               autoComplete="off"
               onChange={(e) => setOwner({ ...owner, owner_emso: e.target.value })}
             />
           </div>
           <div className="col-12">
             <label htmlFor="inputDate4" className="form-label">
-              Date of Birth
+              Fecha de Nacimiento
             </label>
             <input
               type="date"
               className="form-control rounded-0"
               id="inputDate4"
-              placeholder="Enter Birth Date"
+              placeholder="Fecha de nacimiento"
               autoComplete="off"
               onChange={(e) => setOwner({ ...owner, owner_birthdate: e.target.value })}
             />
           </div>
           <div className="col-12">
             <label htmlFor="inputEmail4" className="form-label">
-              Email
+              Correo
             </label>
             <input
               type="email"
               className="form-control rounded-0"
               id="inputEmail4"
-              placeholder="Enter Email"
+              placeholder="Email"
               autoComplete="off"
               onChange={(e) => setOwner({ ...owner, owner_email: e.target.value })}
             />
@@ -126,39 +127,39 @@ const AddPetOwners = () => {
               type="password"
               className="form-control rounded-0"
               id="inputPassword4"
-              placeholder="Enter Password"
+              placeholder="Password"
               onChange={(e) => setOwner({ ...owner, owner_password: e.target.value })}
             />
           </div>
           <div className="col-12">
             <label htmlFor="inputPhone4" className="form-label">
-              Phone
+              Telefono
             </label>
             <input
               type="text"
               className="form-control rounded-0"
               id="inputPhone4"
-              placeholder="Enter Phone Number"
+              placeholder="Telefono"
               autoComplete="off"
               onChange={(e) => setOwner({ ...owner, owner_phone: e.target.value })}
             />
           </div>
           <div className="col-12">
             <label htmlFor="inputAddress4" className="form-label">
-              Address
+              Direccion
             </label>
             <input
               type="text"
               className="form-control rounded-0"
               id="inputAddress4"
-              placeholder="Enter Your Address"
+              placeholder="Direccion"
               autoComplete="off"
               onChange={(e) => setOwner({ ...owner, owner_address: e.target.value })}
             />
           </div>
           <div className="col-12">
             <label htmlFor="category" className="form-label">
-              Select Category
+              Categoria
             </label>
             <select
               name="Category"
@@ -182,7 +183,7 @@ const AddPetOwners = () => {
           </div>
           <div className="col-12">
             <label htmlFor="category" className="form-label">
-              Select Role
+              Role
             </label>
             <select
               name="role"
@@ -206,7 +207,7 @@ const AddPetOwners = () => {
           </div>
           <div className="col-12">
             <button className="btn btn-success w-100 rounded-0 mb-2 my-3">
-              Add Pet Owner
+              Agregar
             </button>
           </div>
         </form>
