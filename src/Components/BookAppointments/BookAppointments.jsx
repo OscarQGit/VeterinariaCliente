@@ -1,4 +1,3 @@
-import React from 'react'
 import BasicBookAppointmentCalendar from './BasicBookAppointmentCalendar';
 
 const BookAppointments = () => {

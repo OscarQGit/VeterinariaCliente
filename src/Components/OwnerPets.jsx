@@ -18,7 +18,7 @@ const OwnerPets = () => {
     // Inside useEffect, set the owner state to the data from the API response
     useEffect(() => {
       axios
-        .get(`http://localhost:3000/auth/pets-and-owner/` + id)
+        .get(`https://veterinariacliente.onrender.com/auth/pets-and-owner/` + id)
         .then((result) => {
           console.log(result.data.Result); // Log the result here
           if (result.data.Status) {

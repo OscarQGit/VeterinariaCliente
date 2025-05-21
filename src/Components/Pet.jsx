@@ -25,7 +25,7 @@ const Pet = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/auth/pets-combined/` + id)
+      .get(`https://veterinariacliente.onrender.com/auth/pets-combined/` + id)
       .then((result) => {
         console.log(result.data.Result); // Log the result here
         if (result.data.Status) {
@@ -39,7 +39,7 @@ const Pet = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3000/auth/delete-pet/" + id)
+      .delete("https://veterinariacliente.onrender.com/auth/delete-pet/" + id)
       .then((result) => {
         if (result.data.Status) {
           window.location.reload();

@@ -16,7 +16,7 @@ const AddAdmin = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/role-types")
+      .get("https://veterinariacliente.onrender.com/auth/role-types")
       .then((result) => {
         console.log(result)
         if (result.data.Status) {
@@ -30,7 +30,7 @@ const AddAdmin = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/categories")
+      .get("https://veterinariacliente.onrender.com/auth/categories")
       .then((result) => {
         if (result.data.Status) {
           setCategory(result.data.Result.rows);
@@ -45,7 +45,7 @@ const AddAdmin = () => {
     e.preventDefault();
   
     axios
-      .post("http://localhost:3000/auth/add-admin", admin)
+      .post("https://veterinariacliente.onrender.com/auth/add-admin", admin)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard");

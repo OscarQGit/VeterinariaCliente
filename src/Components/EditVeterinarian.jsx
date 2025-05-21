@@ -17,7 +17,7 @@ const EditVeterinarian = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/vet-types")
+      .get("https://veterinariacliente.onrender.com/auth/vet-types")
       .then((result) => {
         if (result.data.Status) {
           setSpecialization(result.data.Result);
@@ -28,7 +28,7 @@ const EditVeterinarian = () => {
       .catch((err) => console.log(err));
 
     axios
-      .get("http://localhost:3000/auth/veterinarian/" + id)
+      .get("https://veterinariacliente.onrender.com/auth/veterinarian/" + id)
       .then((result) => {
         setVeterinarian({
           ...veterinarian,
@@ -45,7 +45,7 @@ const EditVeterinarian = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3000/auth/edit-veterinarian/" + id, veterinarian)
+      .put("https://veterinariacliente.onrender.com/auth/edit-veterinarian/" + id, veterinarian)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard/veterinarians");

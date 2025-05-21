@@ -11,7 +11,7 @@ const EditAdmin = () => {
         password: "",
       });
       useEffect(()=>{
-        axios.get("http://localhost:3000/auth/admin/" + id)
+        axios.get("https://veterinariacliente.onrender.com/auth/admin/" + id)
         .then(result => {
             setAdmin({
                 ...admin,
@@ -23,7 +23,7 @@ const EditAdmin = () => {
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put("http://localhost:3000/auth/edit-admin/" + id, admin)
+        axios.put("https://veterinariacliente.onrender.com/auth/edit-admin/" + id, admin)
         .then(result => {
             if(result.data.Status) {
                 navigate("/dashboard")

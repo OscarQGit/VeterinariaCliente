@@ -8,7 +8,7 @@ const AddCategory = () => {
     const handleSubmit = (e) => {
         console.log(category)
         e.preventDefault()
-        axios.post('http://localhost:3000/auth/add-category', {category})
+        axios.post('https://veterinariacliente.onrender.com/auth/add-category', {category})
         .then(result => {
             if(result.data.Status) {
                 navigate('/dashboard/categories')
@@ -22,14 +22,15 @@ const AddCategory = () => {
     <div className='d-flex justify-content-center align-items-center h-75'>
     <div className='p-3 rounded w-25 border'>
         <div className='text-warning'>
+        <h3>Agregar Categoria</h3>
         </div>
-        <h2>Add Category</h2>
+        
         <form onSubmit={handleSubmit}>
             <div className='mb-3'>
-                <label htmlFor='category'><strong>Category:</strong></label>
-                <input type='text' name='category' autoComplete='off' placeholder='Enter category' className='form-control rounded-0' onChange={(e) => setCategory(e.target.value)}/>
+                
+                <input type='text' name='category' autoComplete='off' placeholder='Categoria...' className='form-control rounded-0' onChange={(e) => setCategory(e.target.value)}/>
             </div>
-            <button className='btn btn-success w-100 rounded-0 mb-2'>Add Category</button>
+            <button className='btn btn-success w-100 rounded-0 mb-2'>Agregar</button>
         </form>
     </div>
 </div>

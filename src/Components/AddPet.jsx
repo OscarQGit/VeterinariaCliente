@@ -23,7 +23,7 @@ const AddPet = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pet-owners")
+      .get("https://veterinariacliente.onrender.com/auth/pet-owners")
       .then((result) => {
         if (result.data.Status) {
           setOWner(result.data.Result);
@@ -36,7 +36,7 @@ const AddPet = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/veterinarians")
+      .get("https://veterinariacliente.onrender.com/auth/veterinarians")
       .then((result) => {
         if (result.data.Status) {
           setVeterinarian(result.data.Result);
@@ -49,7 +49,7 @@ const AddPet = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/vaccinations")
+      .get("https://veterinariacliente.onrender.com/auth/vaccinations")
       .then((result) => {
         if (result.data.Status) {
           setVaccination(result.data.Result);
@@ -64,7 +64,7 @@ const AddPet = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/auth/add-pet", pet)
+      .post("https://veterinariacliente.onrender.com/auth/add-pet", pet)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard/pets");
@@ -81,11 +81,11 @@ const AddPet = () => {
     <div className="d-flex justify-content-center align-items-center mt-3">
     <div className="p-3 rounded w-50 border">
       <div className="text-warning"></div>
-      <h2>Add Pet</h2>
+      <h2>Agregar Mascota</h2>
       <form className="row g-1" onSubmit={handleSubmit}>
         <div className="col-12">
           <label htmlFor="inputName" className="form-label">
-            Name
+            Nombre
           </label>
           <input
             type="text"
@@ -99,7 +99,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputChipNumber4" className="form-label">
-            Chip Number
+            Chip  
           </label>
           <input
             type="text"
@@ -114,7 +114,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputType4" className="form-label">
-            Type of Pet
+            Tipo de Mascota
           </label>
           <input
             type="text"
@@ -128,7 +128,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputBreed" className="form-label">
-            Breed
+            Raza
           </label>
           <input
             type="text"
@@ -143,7 +143,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputGender" className="form-label">
-            Gender
+            Genero(M/H)
           </label>
           <input
             type="char"
@@ -158,7 +158,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputBirthDate" className="form-label">
-            Birth Date
+            Fecha de Nacimiento
           </label>
           <input
             type="date"
@@ -173,7 +173,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputHeight" className="form-label">
-            Height
+            Tamaño
           </label>
           <input
             type="text"
@@ -188,7 +188,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputWeight" className="form-label">
-            Weight
+            Peso
           </label>
           <input
             type="text"
@@ -203,7 +203,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="owner" className="form-label">
-            Owner
+            Dueño
           </label>
           <select
             name="Owner"
@@ -227,7 +227,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="vaccination" className="form-label">
-            Select Vaccinations
+            Vacunas
           </label>
           <select
             name="Vaccination"
@@ -251,7 +251,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="inputDateVaccination" className="form-label">
-            Date of Vaccination
+            Fecha de Vacunacion
           </label>
           <input
             type="date"
@@ -266,7 +266,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <label htmlFor="mainVet" className="form-label">
-            Select Main Veterinarian
+            Veterinario
           </label>
           <select
             name="mainvet"
@@ -290,7 +290,7 @@ const AddPet = () => {
         </div>
         <div className="col-12">
           <button className="btn btn-success w-100 rounded-0 mb-2 mt-3">
-            Add Pet
+            Agregar
           </button>
         </div>
       </form>

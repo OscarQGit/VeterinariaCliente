@@ -21,7 +21,7 @@ const OwnerLogin = () => {
     }
     console.log(value)
     axios
-      .post("http://localhost:3000/owner/owner-login", value)
+      .post("https://veterinariacliente.onrender.com/owner/owner-login", value)
       .then((result) => {
         if (result.data.loginStatus) {
           localStorage.setItem("valid", true);

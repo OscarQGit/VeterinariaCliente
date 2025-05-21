@@ -18,7 +18,7 @@ const AddVeterinarian = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/vet-types")
+      .get("https://veterinariacliente.onrender.com/auth/vet-types")
       .then((result) => {
         if (result.data.Status) {
           setSpecialization(result.data.Result);
@@ -31,7 +31,7 @@ const AddVeterinarian = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/categories")
+      .get("https://veterinariacliente.onrender.com/auth/categories")
       .then((result) => {
         if (result.data.Status) {
           setCategory(result.data.Result);
@@ -44,7 +44,7 @@ const AddVeterinarian = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/role-types")
+      .get("https://veterinariacliente.onrender.com/auth/role-types")
       .then((result) => {
         if (result.data.Status) {
           setRole(result.data.Result);
@@ -60,7 +60,7 @@ const AddVeterinarian = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/auth/add-veterinarian", veterinarian)
+      .post("https://veterinariacliente.onrender.com/auth/add-veterinarian", veterinarian)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard/veterinarians");

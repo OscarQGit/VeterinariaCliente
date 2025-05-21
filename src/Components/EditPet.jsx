@@ -24,7 +24,7 @@ const EditPet = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pet-owners")
+      .get("https://veterinariacliente.onrender.com/auth/pet-owners")
       .then((result) => {
         if (result.data.Status) {
           setOWner(result.data.Result);
@@ -37,7 +37,7 @@ const EditPet = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pet/" + id)
+      .get("https://veterinariacliente.onrender.com/auth/pet/" + id)
       .then((result) => {
         setPet({
           ...pet,
@@ -60,7 +60,7 @@ const EditPet = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/veterinarians")
+      .get("https://veterinariacliente.onrender.com/auth/veterinarians")
       .then((result) => {
         if (result.data.Status) {
           setVeterinarian(result.data.Result);
@@ -73,7 +73,7 @@ const EditPet = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/vaccinations")
+      .get("https://veterinariacliente.onrender.com/auth/vaccinations")
       .then((result) => {
         if (result.data.Status) {
           setVaccination(result.data.Result);
@@ -87,7 +87,7 @@ const EditPet = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3000/auth/edit-pet/" + id, pet)
+      .put("https://veterinariacliente.onrender.com/auth/edit-pet/" + id, pet)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard/pets");

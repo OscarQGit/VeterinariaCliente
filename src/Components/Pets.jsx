@@ -10,7 +10,7 @@ const Pets = () => {
   const [pet, setPet] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pets")
+      .get("https://veterinariacliente.onrender.com/auth/pets")
       .then((result) => {
         if (result.data.Status) {
           setPet(result.data.Result);
@@ -23,7 +23,7 @@ const Pets = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3000/auth/delete-pet/" + id)
+      .delete("https://veterinariacliente.onrender.com/auth/delete-pet/" + id)
       .then((result) => {
         if (result.data.Status) {
           window.location.reload();

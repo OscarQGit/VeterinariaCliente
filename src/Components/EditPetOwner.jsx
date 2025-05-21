@@ -15,7 +15,7 @@ const EditPetOwner = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pet-owner/" + id)
+      .get("https://veterinariacliente.onrender.com/auth/pet-owner/" + id)
       .then((result) => {
         setOwner({
           ...owner,
@@ -33,7 +33,7 @@ const EditPetOwner = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3000/auth/edit-pet-owner/" + id, owner)
+      .put("https://veterinariacliente.onrender.com/auth/edit-pet-owner/" + id, owner)
       .then((result) => {
         console.log("Result:", result); // Add this line
         if (result.data.Status) {

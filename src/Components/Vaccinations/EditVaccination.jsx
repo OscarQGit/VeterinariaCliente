@@ -13,7 +13,7 @@ const EditVaccination = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/vaccination/" + id)
+      .get("https://veterinariacliente.onrender.com/auth/vaccination/" + id)
       .then((result) => {
         setVaccination({
           ...vaccination,
@@ -29,7 +29,7 @@ const EditVaccination = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3000/auth/edit-vaccination/" + id, vaccination)
+      .put("https://veterinariacliente.onrender.com/auth/edit-vaccination/" + id, vaccination)
       .then((result) => {
         console.log("Result:", result); // Add this line
         if (result.data.Status) {

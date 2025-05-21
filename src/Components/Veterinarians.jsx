@@ -9,7 +9,7 @@ const Veterinarians = () => {
   const [role, setRole] = useState(""); // State to store user role
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/veterinarians")
+      .get("https://veterinariacliente.onrender.com/auth/veterinarians")
       .then((result) => {
         if (result.data.Status) {
           setVeterinarian(result.data.Result);
@@ -51,7 +51,7 @@ const Veterinarians = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3000/auth/delete-veterinarian/" + id)
+      .delete("https://veterinariacliente.onrender.com/auth/delete-veterinarian/" + id)
       .then((result) => {
         if (result.data.Status) {
           window.location.reload();

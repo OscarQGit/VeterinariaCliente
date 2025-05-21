@@ -11,7 +11,7 @@ const PetOwners = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pet-owners")
+      .get("https://veterinariacliente.onrender.com/auth/pet-owners")
       .then((result) => {
         if (result.data.Status) {
           setOwner(result.data.Result);
@@ -53,7 +53,7 @@ const PetOwners = () => {
 
   const handleDeleteOwner = (id) => {
     axios
-      .delete("http://localhost:3000/auth/delete-pet-owner/" + id)
+      .delete("https://veterinariacliente.onrender.com/auth/delete-pet-owner/" + id)
       .then((result) => {
         if (result.data.Status) {
           window.location.reload();

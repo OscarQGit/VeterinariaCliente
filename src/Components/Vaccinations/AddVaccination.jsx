@@ -15,7 +15,7 @@ const AddVaccination = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/auth/add-admin", vaccination)
+      .post("https://veterinariacliente.onrender.com/auth/add-admin", vaccination)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard");

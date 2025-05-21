@@ -15,7 +15,7 @@ const BasicCalendar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/appointments-combined")
+      .get("https://veterinariacliente.onrender.com/auth/appointments-combined")
       .then((result) => {
         console.log(result.data); // Log the data received from the API
         if (result.data.status) {

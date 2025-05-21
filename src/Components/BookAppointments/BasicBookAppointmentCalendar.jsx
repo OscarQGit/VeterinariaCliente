@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+ 
 import { useNavigate } from "react-router-dom";
 
 const BasicBookAppointmentCalendar = () => {
@@ -19,10 +20,11 @@ const BasicBookAppointmentCalendar = () => {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/veterinarians")
+      .get("https://veterinariacliente.onrender.com/auth/veterinarians")
       .then((result) => {
         if (result.data.Status) {
           setVeterinarian(result.data.Result);
+         
         } else {
           alert(result.data.Error);
         }
@@ -32,7 +34,7 @@ const BasicBookAppointmentCalendar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pets")
+      .get("https://veterinariacliente.onrender.com/auth/pets")
       .then((result) => {
         if (result.data.Status) {
           setPet(result.data.Result);
@@ -45,7 +47,7 @@ const BasicBookAppointmentCalendar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/pet-owners")
+      .get("https://veterinariacliente.onrender.com/auth/pet-owners")
       .then((result) => {
         if (result.data.Status) {
           setOwner(result.data.Result);
@@ -58,7 +60,7 @@ const BasicBookAppointmentCalendar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/services")
+      .get("https://veterinariacliente.onrender.com/auth/services")
       .then((result) => {
         if (result.data.Status) {
          
@@ -74,9 +76,10 @@ const BasicBookAppointmentCalendar = () => {
     e.preventDefault();
 console.log(appointment)
     axios
-      .post("http://localhost:3000/auth/add-appointment", appointment)
+      .post("https://veterinariacliente.onrender.com/auth/add-appointment", appointment)
       .then((result) => {
         if (result.data.Status) {
+         alert("Se agrego la cita. Se programo el envio de correos")
           navigate("/dashboard/preview-appointment");
         } else {
           console.log(result.data)
@@ -90,11 +93,11 @@ console.log(appointment)
     <div className="d-flex justify-content-center align-items-center mt-3">
       <div className="p-3 rounded w-50 border">
         <div className="text-warning"></div>
-        <h2>Add an Appointment</h2>
+        <h2>Crear una cita</h2>
         <form className="row g-1" onSubmit={handleSubmit}>
           <div className="col-12">
             <label htmlFor="inputCreated" className="form-label">
-              Appointment Created
+              Fecha de Creacion
             </label>
             <input
               type="datetime-local"
@@ -112,7 +115,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <label htmlFor="inputStart4" className="form-label">
-              Appointment Starts
+              Fecha de inicio
             </label>
             <input
               type="datetime-local"
@@ -130,7 +133,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <label htmlFor="inputEndDate4" className="form-label">
-              Appointments End Date
+              Fecha Fin
             </label>
             <input
               type="datetime-local"
@@ -147,7 +150,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <label htmlFor="owner" className="form-label">
-              Select Owner
+              Propietario
             </label>
             <select
               name="owner"
@@ -171,7 +174,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <label htmlFor="vet" className="form-label">
-              Select the Vet
+              Veterinario
             </label>
             <select
               name="vet"
@@ -195,7 +198,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <label htmlFor="pet" className="form-label">
-              Select Pet
+              Mascota
             </label>
             <select
               name="pet"
@@ -219,7 +222,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <label htmlFor="service" className="form-label">
-              Select Service
+              Servicio
             </label>
             <select
               name="service"
@@ -244,7 +247,7 @@ console.log(appointment)
           </div>
           <div className="col-12">
             <button className="btn btn-success w-100 rounded-0 mb-2 mt-3">
-              Add Appointment
+              Agregar Cita
             </button>
           </div>
         </form>

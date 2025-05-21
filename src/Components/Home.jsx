@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { FaCircle } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
-import { RiAdminFill } from "react-icons/ri";
+//import { RiAdminFill } from "react-icons/ri";
 import moment from "moment";
 import DatePicker from "react-datepicker";
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+//import { DataTable } from 'primereact/datatable';
+//import { Column } from 'primereact/column';
 import "react-datepicker/dist/react-datepicker.css";
 
 let administradores=[]
@@ -65,7 +65,7 @@ const Home = () => {
   };
 
   const AdminRecords = () => {
-    axios.get("http://localhost:3000/auth/admin-records").then((result) => {
+    axios.get("https://veterinariacliente.onrender.com/auth/admin-records").then((result) => {
      
       if (result.data.Status) { 
         if(administradores.length===0)
@@ -77,7 +77,7 @@ const Home = () => {
   };
 
   const adminCount = () => {
-    axios.get("http://localhost:3000/auth/admin-count").then((result) => {   
+    axios.get("https://veterinariacliente.onrender.com/auth/admin-count").then((result) => {   
       if (result.data.Status) {
         setAdminTotal(result.data.Result.rows[0].admin);
       }
@@ -86,7 +86,7 @@ const Home = () => {
 
   const veterinariansCount = () => {
     axios
-      .get("http://localhost:3000/auth/veterinarians-count")
+      .get("https://veterinariacliente.onrender.com/auth/veterinarians-count")
       .then((result) => {
          
         if (result.data.Status) {
@@ -96,7 +96,7 @@ const Home = () => {
   };
 
   const petsCount = () => {
-    axios.get("http://localhost:3000/auth/pets-count").then((result) => {
+    axios.get("https://veterinariacliente.onrender.com/auth/pets-count").then((result) => {
       if (result.data.Status) {
         setPetsTotal(result.data.Result.rows[0].pets);
       }
@@ -104,7 +104,7 @@ const Home = () => {
   };
 
   const petOwnersCount = () => {
-    axios.get("http://localhost:3000/auth/pet-owners-count").then((result) => {
+    axios.get("https://veterinariacliente.onrender.com/auth/pet-owners-count").then((result) => {
       if (result.data.Status) {
         setPetOwnersTotal(result.data.Result.rows[0].petowners);
       }
@@ -113,7 +113,7 @@ const Home = () => {
 
   const handleDeleteAdmin = (id) => {
     axios
-      .delete("http://localhost:3000/auth/delete-admin/" + id)
+      .delete("https://veterinariacliente.onrender.com/auth/delete-admin/" + id)
       .then((result) => {
         if (result.data.Status) {
           window.location.reload();
@@ -125,9 +125,10 @@ const Home = () => {
 
   const fetchAppointments = () => {
     axios
-      .get("http://localhost:3000/auth/appointments-combined")
+      .get("https://veterinariacliente.onrender.com/auth/appointments-combined")
       .then((result) => {
         if (result.data.status) {
+          console.log(result.data.result)
           setEvents(result.data.result);
         } else {
           alert(result.data.error);
@@ -271,15 +272,17 @@ const Home = () => {
               </tr>
             </thead>
             <tbody>
-              {console.log(filteredAppointments)}
+               
               {filteredAppointments.length > 0 ? (
                 filteredAppointments.map((event) => (
                   <tr key={event.appointments_id}>
                     <td>
                       {moment(event.appoitments_starts_at).format("DD-MM-YYYY")}
+                      {console.log(event)}
                     </td>
-                    <td>{moment(event.appoitments_starts_at).format("LT")}</td>
+                    <td>{moment(event.appointments_starts_at).format("LT")}</td>
                     <td>{moment(event.appointments_ends_at).format("LT")}</td>
+                    
                     <td>{event.service_name}</td>
                     <td>{event.pet_name}</td>
                     <td>MVZ. {event.veterinarian_name}</td>

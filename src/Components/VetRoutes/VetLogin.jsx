@@ -21,7 +21,7 @@ const VetLogin = () => {
     }
     console.log(value)
     axios
-      .post("http://localhost:3000/auth/veterinarian-login", value)
+      .post("https://veterinariacliente.onrender.com/auth/veterinarian-login", value)
       .then((result) => {
         if (result.data.loginStatus) {
           localStorage.setItem("valid", true);

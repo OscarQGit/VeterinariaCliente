@@ -24,7 +24,7 @@ const OwnerDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/auth/pet-owner/` + id)
+      .get(`https://veterinariacliente.onrender.com/auth/pet-owner/` + id)
       .then((result) => {
         console.log(result.data.Result); // Log the result here
         if (result.data.Status) {
@@ -38,7 +38,7 @@ const OwnerDetails = () => {
 
 
   const handleLogout = () => {
-    axios.get("http://localhost:3000/auth/logout").then((result) => {
+    axios.get("https://veterinariacliente.onrender.com/auth/logout").then((result) => {
       if (result.data.Status) {
         localStorage.removeItem("valid");
         navigate("/");
@@ -49,7 +49,7 @@ const OwnerDetails = () => {
 
   const handleDeleteOwner = (id) => {
     axios
-      .delete("http://localhost:3000/auth/delete-pet-owner/" + id)
+      .delete("https://veterinariacliente.onrender.com/auth/delete-pet-owner/" + id)
       .then((result) => {
         if (result.data.Status) {
           window.location.reload();
@@ -71,7 +71,7 @@ const OwnerDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3000/auth/edit-pet-owner/" + id, owner)
+      .put("https://veterinariacliente.onrender.com/auth/edit-pet-owner/" + id, owner)
       .then((result) => {
         console.log("Result:", result); // Add this line
         if (result.data.Status) {

@@ -20,7 +20,7 @@ const AddPetOwners = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/role-types")
+      .get("https://veterinariacliente.onrender.com/auth/role-types")
       .then((result) => {
         if (result.data.Status) {
           setRole(result.data.Result);
@@ -33,7 +33,7 @@ const AddPetOwners = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/categories")
+      .get("https://veterinariacliente.onrender.com/auth/categories")
       .then((result) => {
         if (result.data.Status) {
           setCategory(result.data.Result);
@@ -48,7 +48,7 @@ const AddPetOwners = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/auth/add-pet-owners", owner)
+      .post("https://veterinariacliente.onrender.com/auth/add-pet-owners", owner)
       .then((result) => {
         if (result.data.Status) {
           navigate("/dashboard/pet-owners");

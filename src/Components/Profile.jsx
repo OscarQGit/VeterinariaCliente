@@ -1,4 +1,4 @@
-import React from 'react'
+
 import enconstruccion from '../imagenes/download.jpg';
 const Profile = () => {
   return (

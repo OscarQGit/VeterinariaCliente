@@ -6,10 +6,11 @@ import { BiSolidCategory } from "react-icons/bi";
 const Category = () => {
   const [category, setCategory] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:3000/auth/categories")
+    axios.get("https://veterinariacliente.onrender.com/auth/categories")
     .then(result => {
       if(result.data.Status) {
-        setCategory(result.data.Result);
+        
+        setCategory(result.data.Result.rows);
     } else {
         alert(result.data.Error)
     }
@@ -18,20 +19,20 @@ const Category = () => {
   return (
     <div className='px-5 my-4 mx-2'>
       <div className='d-flex justify-content-between align-items-center'>
-        <h3>Category List</h3>
-        <Link to="/dashboard/add-category" className='btn btn-success'>Add Category</Link>
+        <h3>Lista de Categorias</h3>
+        <Link to="/dashboard/add-category" className='btn btn-success'>Agregar Categoria</Link>
       </div>
       <div className="mt-3">
         {category.length === 0 ? (
           <table className="table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Nombre</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><BiSolidCategory /> No Category Found</td>
+                <td><BiSolidCategory /> No se encontraron categorias</td>
               </tr>
             </tbody>
           </table>
@@ -39,7 +40,7 @@ const Category = () => {
           <table className="table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Nombre</th>
               </tr>
             </thead>
             <tbody>

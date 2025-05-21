@@ -8,7 +8,7 @@ const SearchBar = () => {
   const getDataFromAPI = () => {
     console.log("Fetching options from API");
 
-    fetch("http://localhost:3000/auth/pet-owners")
+    fetch("https://veterinariacliente.onrender.com/auth/pet-owners")
       .then((response) => response.json())
       .then((res) => {
         if (res && res.Result && res.Result.length > 0) {
@@ -39,7 +39,7 @@ const SearchBar = () => {
             {...params}
             onChange={getDataFromAPI}
             variant="outlined"
-            label="Search Box"
+            label="Buscar..."
           />
         )}
       />
